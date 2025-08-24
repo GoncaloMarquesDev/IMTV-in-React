@@ -1,0 +1,673 @@
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/*----colocado por mim */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Tema Light (default) */
+
+.default {
+  --bg-gradient: linear-gradient(to right, #1c508d, #b92b27);
+  --text-color: #ffffff;
+  --primary-color: #007bff;
+  --secondary-color: #c52057;
+  --card-bg: #f5f5f5;
+  --btn-primary-hover: #7eb5da;
+  --btn-secondary-hover: #dd789a;
+  --btn-mode-color: #ffffff;
+  --btn-mode-color-active: #a4a3a3;
+}
+
+.light {
+  --bg-gradient: #ffffff;
+  --text-color: #000;
+  --primary-color: #1daf8d;
+  --secondary-color: #422c91;
+  --card-bg: #f5f5f5;
+  --btn-mode-color: #6d6b6b;
+  
+}
+
+/* Tema Dark */
+.dark {
+  --bg-gradient: #121212;
+  --text-color: white;
+  --primary-color: #404244;
+  --secondary-color: #999999;
+  --card-bg: #1e1e1e;
+  --btn-primary-hover: #898a8a;
+  --btn-secondary-hover: #5b5b5b;
+  --btn-mode-color: #ffffff;
+}
+body {
+  margin: 0px;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  position: relative;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  /*  a:hover {
+    color: #747bff;
+  } */
+
+  button {
+    background-color: #f9f9f9;
+  }
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  .btnprimary {
+    padding: 0.5em 1em;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+    margin: 10px;
+  }
+  .btnsecundary {
+    padding: 0.5em 1em;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+    margin: 10px;
+  }
+
+  .btnsecundary:hover {
+    background-color: var(--btn-secondary-hover);
+  }
+  .btnprimary:hover {
+    background-color: var(--btn-primary-hover);
+  }
+
+  /*  ---------------------------------- css posto por mim --------------------------------------------  */
+  /*  LOADer */
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* fundo semi-transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* fica acima de todo o conteúdo */
+  }
+
+  .loading-content {
+    text-align: center;
+  }
+
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+
+  /* @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } */
+
+  .loading-content p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  /*  LOADer */
+
+  /* -----NAVBAR----- */
+
+  .nav-bar {
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #00000003;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px #0000001a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-bar ul {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* espaço entre os itens */
+    list-style: none; /* remove as bolinhas do ul */
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-bar li a {
+    color: white;
+  text-decoration: none;
+  font-weight: bold;
+  }
+  .hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+  /* -----NAVBAR----- */
+  /* ----NAVBAR RESPONSIVE------- */
+  @media (max-width: 768px) {
+  /* Esconde os links normais */
+  .nav-bar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* logo abaixo da navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 1rem;
+  }
+
+  /* Mostra o menu quando o hambúrguer for clicado */
+  .nav-bar ul.active {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Mostra o hambúrguer em mobile */
+  .hamburger {
+    display: block;
+  }
+}
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none;
+    }
+  }
+  /* ----NAVBAR RESPONSIVE------- */
+
+  .pic-movie {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+  }
+  /*---COMPONENTE POPULAR MOVIES----- */
+
+  .category-popular {
+    margin: 60px 40px;
+    padding-top: 30px;
+    
+  }
+  .movies-grid {
+    display: grid;
+    /* flex-wrap: wrap; */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    row-gap: 20px;
+    column-gap: 30px;
+    margin-top: 10px;
+  }
+  /*--- FIM -- COMPONENTE POPULAR MOVIES----- */
+  /* ----PUPULAR MOVIES RESPONSIVE */
+  @media (max-width: 480px) {
+    .movies-grid {
+      grid-template-columns: 1fr 1fr; /* duas colunas */
+      gap: 15px;
+    }
+  }
+  /* ----PUPULAR MOVIES RESPONSIVE */
+  /*  ------ COMPONENTE CARD SERIES MOVIES .------ */
+  .card-wrapper {
+    flex: 0 0 auto; /* impede que o flex encolha ou cresça automaticamente */
+    height: 425px; /* altura fixa */
+  }
+  .card-movies {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 200px;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: #ffffff1a;
+    min-width: 200px;
+    max-width: 200px;
+    color: var(--text-color);
+    cursor: pointer;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+    word-wrap: break-word;
+
+    overflow-wrap: break-word;
+  }
+
+  /* Tooltip com o título completo ao passar o rato */
+  .card-movies:hover p,
+  .card-movies h3 {
+    font-size: 1rem;
+    margin-top: 8px;
+    text-align: center;
+
+    /* corta para uma linha só */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    max-width: 100%;
+    cursor: help; /* 👈 dá a ideia de que dá para ver mais */
+  }
+  .card-movies h3:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    background: rgba(0, 0, 0, 0.5); /* opcional: fundo para destacar */
+    padding: 2px 4px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 10;
+  }
+  .card-movies:hover span {
+    white-space: normal; /* permite quebrar linhas */
+  }
+  .card-movies:hover {
+    transform: scale(1.05) translateY(-5px);
+    background-color: #ffffff80;
+
+    z-index: 10; /* para ficar acima dos outros cards */
+  }
+  .card-movies img {
+    border-radius: 10px;
+  }
+  /*  ----------  FIM CARDMOVIESSERIES ------------- */
+
+  /* componenyes now playing , top rated e airing today */
+
+  .category-container-Playing_Top_airing {
+    margin: 40px 40px;
+  }
+
+  .category-flex-Playing_Top_airing {
+    height: 470px;
+    display: flex;
+    gap: 30px;
+    overflow-x: auto; /* 👈 mantém o scroll horizontal */
+    overflow-y: visible; /* 👈 permite crescer para cima */
+    white-space: nowrap;
+    max-width: 90vw;
+    box-sizing: border-box;
+    padding: 24px 5px; /* 👈 dá respiro em cima/baixo */
+    position: relative; /* necessário pro z-index */
+  }
+
+  /* CONPONENTE TOP RATED */
+  /*  ------ MOVIEINFO------ */
+
+  .movie-hero {
+    margin-top: 100px;
+    width: 100vw; /* ocupa toda a largura do viewport */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+  }
+  .movie-poster {
+    width: 350px;
+
+    top: 50px;
+    left: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .movie-hero-content {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+  }
+
+  .movie-poster img {
+    width: 300px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+
+  .movie-details {
+    margin-bottom: 70px;
+    flex: 1;
+    color: white;
+    font-size: 2rem; /* ou o tamanho que quiseres, ex: 3rem */
+    font-weight: bold; /* opcional, se quiseres mais impacto */
+    text-shadow: 2px 2px 4px #242424;
+  }
+  
+  @media (max-width: 768px) {
+  .movie-hero {
+   flex-direction: column; /* coluna para mobile */
+    align-items: center;    /* centraliza horizontalmente */
+    text-align: center;     /* texto centralizado */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .movie-hero img {
+   width: 70%;         /* reduz tamanho no mobile */
+    max-width: 200px;   /* limita largura máxima */
+    margin-top: 0; 
+  }
+ .movie-details {
+    font-size: 1.5rem;  /* ajusta tamanho do texto */
+  }
+  .movie-hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .movie-hero-content p {
+    font-size: 0.9rem;
+  }
+}
+  .genres {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .chip {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+  }
+
+  .genre-chip {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+  .rating {
+    color: #f6fa07;
+    font-size: 30px;
+  }
+  .content {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .overview {
+    max-width: 60%; /* ou 800px, 60ch, etc., consoante o teu layout */
+    margin-top: 50px;
+    margin-left: 40px;
+    font-size: larger;
+  }
+  .crew-content {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible; /* 👈 permite crescimento vertical */
+    scroll-snap-type: x mandatory;
+    gap: 22px;
+    white-space: normal;
+    max-width: 90vw;
+    box-sizing: border-box;
+    padding-top: 14px;
+    padding-bottom: 24px;
+    text-align: center;
+    scroll-padding-left: 16px;
+  }
+  .crew {
+    margin-top: 24px;
+  }
+  .cast-content {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible; /* 👈 permite crescimento vertical */
+    scroll-snap-type: x mandatory;
+    gap: 22px;
+    white-space: normal;
+    max-width: 90vw;
+    box-sizing: border-box;
+    padding-top: 14px;
+    padding-bottom: 24px;
+    text-align: center;
+    scroll-padding-left: 16px;
+    margin-top: 24px;
+  }
+  .cast {
+    margin-left: 45px;
+  }
+  .actor-image-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .actor-image-wrapper {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .actor-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+
+  /*  ------ FIM MOVIEINFO------ */
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .searchBar {
+    border-radius: 8px;
+  }
+  .category_more_like_this {
+    margin-top: 24px;
+  }
+  /* SEARCHBAR */
+  /* botoes modos */
+  .theme-toggle {
+    width: 35px;
+    height: 25px;
+    padding: 2px;
+    margin: 10px;
+    background: var(--btn-mode-color);
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .theme-toggle::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+
+  .theme-toggle.active {
+    background: var(--btn-mode-color-active);
+  }
+
+  .theme-toggle.active::after {
+    transform: translateX(25px);
+  }
+  /* botoes modos */
+
+
+  /* paginacao */
+  .pagination{
+    display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  }
+
+  .pagination-info {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  color: var(--text-color);
+  transition: background 0.3s;
+}
+
+.pagination-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+
+  /* paginacao */
+
+  /* wrapper  btn favorites */
+  .poster-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.poster-wrapper img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 30%;
+  padding: 3px;
+  cursor: pointer;
+  font-size: .1rem;
+  color: white;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.5);
+}
+  /* wrapper  btn favorites */
+}
+@media (max-width: 768px) {
+  .nav-bar ul {
+    display: none;
+  }
+  .nav-bar.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .overview {
+    max-width: 100%;
+    margin: 20px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .btnprimary,
+  .btnsecundary {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .card-movies {
+    min-width: 150px;
+    max-width: 150px;
+  }
+}

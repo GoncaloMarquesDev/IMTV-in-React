@@ -1,0 +1,24 @@
+.category-favorite {
+  margin: 60px 40px;
+  padding-top: 30px;
+}
+
+.favorite-flex {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 30px;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .favorite-grid {
+    grid-template-columns: 1fr 1fr; /* duas colunas em mobile */
+    gap: 15px;
+  }
+}
+
+/* .card-wrapper {
+  flex: 0 0 auto;
+  height: 425px;
+} */

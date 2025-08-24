@@ -1,0 +1,77 @@
+.now-playing-container {
+  margin: 16px;
+  width: 100%;
+}
+
+.now-playing-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  gap: 12px;
+  padding-bottom: 12px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* rolagem suave no mobile */
+}
+
+/* esconder scrollbar no mobile */
+.now-playing-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+@media (max-width: 767px) {
+  .now-playing-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.now-playing-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.now-playing-scroll a {
+  text-decoration: none;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.now-playing-card {
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow: visible;
+  flex-shrink: 0;
+  max-width: 140px; /* mobile */
+}
+
+.now-playing-card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .now-playing-container {
+    margin: 24px;
+  }
+  .now-playing-scroll {
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+  .now-playing-card {
+    max-width: 180px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .now-playing-container {
+    margin: 40px;
+  }
+  .now-playing-scroll {
+    gap: 20px;
+  }
+  .now-playing-card {
+    max-width: 220px;
+  }
+}
