@@ -1,0 +1,31 @@
+.theme-toggle {
+  width: 35px;
+  height: 25px;
+  padding: 2px;
+  margin: 10px;
+  background: var(--btn-mode-color);
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 13px;
+  width: 19px;
+  height: 19px;
+
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.theme-toggle.active {
+  background: var(--btn-mode-color-active);
+}
+
+.theme-toggle.active::after {
+  transform: translateX(25px);
+}

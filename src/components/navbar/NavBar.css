@@ -1,0 +1,121 @@
+.wrapper {
+  width: 100vw;
+  background-color: #00000003;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px #0000001a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 99999;
+}
+.nav-bar {
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 2000px;
+  z-index: 1000;
+}
+
+.nav-bar ul {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espaço entre os itens */
+  list-style: none; /* remove as bolinhas do ul */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+.btnsecundary {
+  padding: 0.5em 1em;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+  margin: 10px;
+}
+
+.btnsecundary:hover {
+  background-color: var(--btn-secondary-hover);
+}
+.btnprimary {
+  padding: 0.5em 1em;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+  margin: 10px;
+}
+
+.btnprimary:hover {
+  background-color: var(--btn-primary-hover);
+}
+.nav-bar ul.active {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  /* Esconde os links normais */
+  .nav-bar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 76px; /* logo abaixo da navbar */
+
+    width: 100%;
+  }
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+  }
+  .btnprimary {
+    font-size: 0.8rem;
+  }
+  .btnsecundary {
+    font-size: 0.8rem;
+  }
+  .nav-bar ul.active {
+    background-color: rgba(59, 59, 59, 0.5);
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    width: 200px;
+    border-radius: 10px;
+  }
+
+  /* Mostra o menu quando o hambúrguer for clicado */
+
+  /* Mostra o hambúrguer em mobile */
+  .hamburger {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}

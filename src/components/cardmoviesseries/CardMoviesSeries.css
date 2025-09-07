@@ -1,0 +1,77 @@
+.card-movies {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 200px;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: #ffffff1a;
+    min-width: 200px;
+    max-width: 200px;
+    color: var(--text-color);
+    cursor: pointer;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+    word-wrap: break-word;
+
+    overflow-wrap: break-word;
+  }
+
+  /* Tooltip com o título completo ao passar o rato */
+  .card-movies:hover p,
+  .card-movies h3 {
+    font-size: 1rem;
+    margin-top: 8px;
+    text-align: center;
+
+    /* corta para uma linha só */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    max-width: 100%;
+    cursor: help; /* 👈 dá a ideia de que dá para ver mais */
+  }
+  .card-movies h3:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    background: rgba(0, 0, 0, 0.5); /* opcional: fundo para destacar */
+    padding: 2px 4px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 10;
+  }
+  .card-movies:hover span {
+    white-space: normal; /* permite quebrar linhas */
+  }
+  .card-movies:hover {
+    transform: scale(1.05) translateY(-5px);
+    background-color: #ffffff80;
+
+    z-index: 10; /* para ficar acima dos outros cards */
+  }
+  .card-movies img {
+    border-radius: 10px;
+  }
+  .favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 30%;
+  padding: 3px;
+  cursor: pointer;
+  font-size: .1rem;
+  color: white;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.5);
+}

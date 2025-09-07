@@ -1,0 +1,22 @@
+ @media (max-width: 480px) {
+    .movies-grid {
+      grid-template-columns: 1fr 1fr; /* duas colunas */
+      gap: 15px;
+    }
+  }
+  .card-wrapper {
+  flex: 0 0 auto;
+  height: 425px;
+}
+.movies-grid {
+  display: grid;
+  /* flex-wrap: wrap; */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  row-gap: 20px;
+  column-gap: 30px;
+  margin-top: 10px;
+}
+.category-popular {
+  margin: 60px 40px;
+  padding-top: 30px;
+}

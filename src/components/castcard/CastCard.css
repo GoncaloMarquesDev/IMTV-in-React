@@ -1,0 +1,15 @@
+ .cast-content {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible; /* 👈 permite crescimento vertical */
+    scroll-snap-type: x mandatory;
+    gap: 22px;
+    white-space: normal;
+    max-width: 90vw;
+    box-sizing: border-box;
+    padding-top: 14px;
+    padding-bottom: 24px;
+    text-align: center;
+    scroll-padding-left: 16px;
+    margin-top: 24px;
+  }

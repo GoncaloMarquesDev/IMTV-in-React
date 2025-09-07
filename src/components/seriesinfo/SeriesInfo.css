@@ -1,0 +1,71 @@
+.movie-hero img {
+  width: 70%; /* reduz tamanho no mobile */
+  max-width: 200px; /* limita largura máxima */
+  margin-top: 0;
+}
+.movie-hero {
+  margin-top: 100px;
+  width: 100vw; /* ocupa toda a largura do viewport */
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+.movie-hero-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+}
+.movie-poster {
+  width: 350px;
+
+  top: 50px;
+  left: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.movie-poster img {
+  width: 300px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.movie-details {
+  margin-bottom: 70px;
+  flex: 1;
+  color: white;
+  font-size: 2rem; /* ou o tamanho que quiseres, ex: 3rem */
+  font-weight: bold; /* opcional, se quiseres mais impacto */
+  text-shadow: 2px 2px 4px #242424;
+  font-size: 1.5rem;
+}
+.rating {
+  color: #f6fa07;
+  font-size: 30px;
+}
+.genre-chip {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 6px 12px;
+  margin: 4px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+.content {
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+.overview {
+  max-width: 60%; /* ou 800px, 60ch, etc., consoante o teu layout */
+  margin-top: 50px;
+  margin-left: 40px;
+  font-size: larger;
+}
+.cast {
+  margin-left: 45px;
+}
