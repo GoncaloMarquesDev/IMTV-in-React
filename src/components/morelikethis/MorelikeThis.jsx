@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import CardMoviesSeries from "../cardmoviesseries/CardMoviesSeries";
 import Loading from "../loading/Loading";
 import { useEffect, useState } from "react";
-import "./MoreLikeThis.css";
+import "./MorelikeThis.css";
 
 function MoreLikeThis({ genres, movieId, onSelectMovie, onMovieClick, type }) {
   const [moviesByGenre, setMoviesByGenre] = useState([]);
