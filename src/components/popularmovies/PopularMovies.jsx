@@ -7,7 +7,7 @@ function PopularMovies({ movies }) {
     <div className="category-popular">
       <h2>Popular Films</h2>
 
-      <div className="movies-grid">
+      <div className="movies-grid-popular">
         {movies.results.map((movie) => (
           <Link to={`/movie/${movie.id}`} key={movie.id}>
             <div className="card-wrapper">
