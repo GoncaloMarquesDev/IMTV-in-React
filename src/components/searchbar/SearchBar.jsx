@@ -1,3 +1,4 @@
+/* Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNzJjMmNlNjZlNDFjMjkyOTg5OWJiMjU2ZjFjNGRiNSIsIm5iZiI6MTc1NDA4NjQ1MC43OTcsInN1YiI6IjY4OGQzYzMyZTllOTc2YjI1Y2RlNjIwOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A2s0Jbc8bApWe7beNwRy8GcGQ1tk6bgNCbq1m4pH-Dg` */
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
 import "./SearchBar.css";
@@ -58,7 +59,7 @@ function SearchBar() {
       const filteredResults = (data.results || []).filter(
         (item) => item.media_type === "movie" || item.media_type === "tv"
       );
-
+console.log("Resultados filtrados:", filteredResults); 
       setResults(filteredResults);
       setShowDropdown(true);
     } catch (err) {

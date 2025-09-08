@@ -55,22 +55,22 @@ function SeriesInfo() {
   return (
     <div>
       <section
-        className="movie-hero"
+        className="hero-serie"
         style={{
           backgroundImage: serie?.backdrop_path
             ? `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://image.tmdb.org/t/p/w1280${serie.backdrop_path})`
             : "none",
         }}
       >
-        <div className="movie-hero-content">
-          <div className="movie-poster" ref={serieInfoRef}>
+        <div className="serie-hero-content">
+          <div className="serie-poster" ref={serieInfoRef}>
             <img
               src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
               alt={serie.name}
             />
           </div>
 
-          <div className="movie-details">
+          <div className="serie-details">
             <h1>{serie.name}</h1>
             <p className="rating">★ {serie.vote_average.toFixed(1)}/10</p>
             <p> {serie.first_air_date?.slice(0, 4)}</p>
@@ -90,13 +90,13 @@ function SeriesInfo() {
           </div>
         </div>
       </section>
-      <div className="content">
-        <div className="overview">
+      <div className="serie-content">
+        <div className="serie-overview">
           <h1>Overview</h1>
           <p>{serie.overview}</p>
         </div>
       </div>
-      <div className="cast">
+      <div className="serie-cast">
         <CastCard id={id} type={"tv"} />
         <CrewCard id={id} type={"tv"} />
         <MoreLikeThis

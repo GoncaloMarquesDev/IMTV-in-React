@@ -87,7 +87,7 @@
   .nav-bar {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     gap: 20px;
@@ -101,9 +101,9 @@
   .nav-bar ul.active {
     background-color: rgba(59, 59, 59, 0.5);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0px;
-    width: 200px;
+    width: 100px;
     border-radius: 10px;
   }
 

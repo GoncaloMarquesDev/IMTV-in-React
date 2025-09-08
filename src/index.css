@@ -5,11 +5,11 @@
   padding: 0;
 }
 
-img {
+/* img {
   max-width: 100%;
   height: auto;
   display: block;
-}
+} */
 /*----colocado por mim */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -44,7 +44,6 @@ img {
   --secondary-color: #422c91;
   --card-bg: #f5f5f5;
   --btn-mode-color: #6d6b6b;
-  
 }
 
 /* Tema Dark */
@@ -62,7 +61,7 @@ body {
   margin: 0px;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  width: 100vw;
   min-height: 100vh;
   position: relative;
   background: var(--bg-gradient);
@@ -75,9 +74,9 @@ body {
     color: #213547;
     background-color: #ffffff;
   }
-  /*  a:hover {
+  a:hover {
     color: #747bff;
-  } */
+  }
 
   button {
     background-color: #f9f9f9;
@@ -85,24 +84,17 @@ body {
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
- 
 
   /*  ---------------------------------- css posto por mim --------------------------------------------  */
   /*  LOADer */
- 
-  
 
   /*  LOADer */
 
   /* -----NAVBAR----- */
-
- 
-  
 
   /* -----NAVBAR----- */
   /* ----NAVBAR RESPONSIVE------- */
 
- 
   /* ----NAVBAR RESPONSIVE------- */
 
   .pic-movie {
@@ -114,52 +106,43 @@ body {
   }
   /*---COMPONENTE POPULAR MOVIES----- */
 
-  
-  
   /*--- FIM -- COMPONENTE POPULAR MOVIES----- */
   /* ----PUPULAR MOVIES RESPONSIVE */
- 
+
   /* ----PUPULAR MOVIES RESPONSIVE */
   /*  ------ COMPONENTE CARD SERIES MOVIES .------ */
   .card-wrapper {
     flex: 0 0 auto; /* impede que o flex encolha ou cresça automaticamente */
-    height: 425px; /* altura fixa */
+    height: 400px; /* altura fixa */
   }
-  
+  @media (max-width: 500px) {
+    .card-wrapper {
+      flex: 0 0 auto; /* impede que o flex encolha ou cresça automaticamente */
+      height: 350px; /* altura fixa */
+    }
+  }
   /*  ----------  FIM CARDMOVIESSERIES ------------- */
 
   /* componenyes now playing , top rated e airing today */
 
- 
-
- 
-
   /* CONPONENTE TOP RATED */
   /*  ------ MOVIEINFO------ */
 
-
- 
-
-
-  
-
- 
-  
   @media (max-width: 768px) {
-  .movie-hero {
-   flex-direction: column; /* coluna para mobile */
-    align-items: center;    /* centraliza horizontalmente */
-    text-align: center;     /* texto centralizado */
-    padding: 20px;
-    gap: 20px;
+    .movie-hero {
+      flex-direction: column; /* coluna para mobile */
+      align-items: center; /* centraliza horizontalmente */
+      text-align: center; /* texto centralizado */
+      padding: 20px;
+      gap: 20px;
+    }
+    .movie-hero-content h1 {
+      font-size: 1.5rem;
+    }
+    .movie-hero-content p {
+      font-size: 0.9rem;
+    }
   }
-  .movie-hero-content h1 {
-    font-size: 1.5rem;
-  }
-  .movie-hero-content p {
-    font-size: 0.9rem;
-  }
-}
 
   .genres {
     display: flex;
@@ -174,14 +157,6 @@ body {
     font-size: 14px;
     color: white;
   }
-
- 
-
-  
-  
-  
- 
- 
 
   .loading-container {
     display: flex;
@@ -201,21 +176,18 @@ body {
   .searchBar {
     border-radius: 8px;
   }
- 
-  
 
   /* wrapper  btn favorites */
   .poster-wrapper {
-  position: relative;
-  display: inline-block;
-}
+    position: relative;
+    display: inline-block;
+  }
 
-.poster-wrapper img {
-  width: 100%;
-  border-radius: 8px;
-  display: block;
-}
-
+  .poster-wrapper img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
 
   /* wrapper  btn favorites */
 }
@@ -229,7 +201,7 @@ body {
     position: absolute;
     top: 60px;
     right: 20px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
   }

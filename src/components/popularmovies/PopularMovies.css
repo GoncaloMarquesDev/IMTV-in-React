@@ -2,11 +2,19 @@
   margin: 60px 40px;
   padding-top: 30px;
 }
-.movies-grid {
+.movies-grid-popular {
   display: grid;
   /* flex-wrap: wrap; */
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   row-gap: 20px;
   column-gap: 30px;
   margin-top: 10px;
+}
+@media(max-width:768px){
+.movies-grid-popular {
+  
+  row-gap: 0px;
+  column-gap: 15px;
+ 
+}
 }
