@@ -191,7 +191,7 @@ body {
 
   /* wrapper  btn favorites */
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .nav-bar ul {
     display: none;
   }
@@ -201,11 +201,11 @@ body {
     position: absolute;
     top: 60px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(71, 11, 225, 0.8);
     padding: 20px;
     border-radius: 10px;
   }
-}
+} */
 @media (max-width: 768px) {
   .overview {
     max-width: 100%;
