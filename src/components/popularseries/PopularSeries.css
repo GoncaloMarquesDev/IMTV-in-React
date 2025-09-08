@@ -1,3 +1,7 @@
+.category-popular {
+  margin: 60px 40px;
+  padding-top: 30px;
+}
 .movies-grid {
   display: grid;
   /* flex-wrap: wrap; */
@@ -6,26 +10,14 @@
   column-gap: 30px;
   margin-top: 10px;
 }
-.category-popular {
-  margin: 60px 40px;
-  padding-top: 30px;
-}
+
 @media (max-width: 768px) {
-  .movies-grid-popular {
+  .movies-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     padding-bottom: 10px;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-  }
-
-  /* Estilizar a barra de scroll */
-  .movies-grid-popular::-webkit-scrollbar {
-    height: 6px;
-  }
-  .movies-grid-popular::-webkit-scrollbar-thumb {
-    background: rgba(150, 150, 150, 0.6);
-    border-radius: 4px;
   }
 }
