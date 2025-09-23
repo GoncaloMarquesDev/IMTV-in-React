@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import PopularSeries from "../popularseries/PopularSeries";
 import TopRatedSeries from "../topratedseries/TopRatedSeries";
 import SeriesAiring from "../seriesairing/SeriesAiring";
+import Pagination from "../pagination/Pagination";
 import Loading from "../loading/Loading";
 import "./SeriesList.css";
 
@@ -58,30 +59,7 @@ function SeriesList() {
     <div className="main-movies">
       <div className="categories">
         <PopularSeries series={seriesList} />
-
-        {/* Botões de navegação */}
-        <div className="pagination">
-          <button
-            className="pagination-button"
-            onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-            disabled={page === 1}
-          >
-            ◀ Anterior
-          </button>
-
-          <span className="pagination-info">
-            Page {page} of {totalPages}
-          </span>
-
-          <button
-            className="pagination-button"
-            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-            disabled={page === totalPages}
-          >
-            Seguinte ▶
-          </button>
-        </div>
-
+        <Pagination page={page} totalPages={totalPages} setPage={setPage} />
         <TopRatedSeries />
         <SeriesAiring />
       </div>
