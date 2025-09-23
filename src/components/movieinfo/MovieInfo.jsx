@@ -5,6 +5,8 @@ import CrewCard from "../crewcard/CrewCard";
 import MoreLikeThis from "../morelikethis/MorelikeThis";
 import Loading from "../loading/Loading";
 import "./MovieInfo.css";
+import MovieDetails from "../moviedetail/MovieDetail";
+import MovieHero from "../moviehero/MovieHero";
 
 function MovieInfo() {
   const { id } = useParams();
@@ -63,28 +65,14 @@ function MovieInfo() {
         }}
       >
         <div className="movie-hero-content">
-          <div className="movie-poster" ref={movieInfoRef}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={movie.title}
-            />
-          </div>
-
-          <div className="movie-details">
-            <h1>{movie.title}</h1>
-            <p className="rating">★ {movie.vote_average.toFixed(1)}/10</p>
-            <p>
-              {Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m
-            </p>
-            <p> {movie.release_date?.slice(0, 4)}</p>
-            <div className="movie-genres">
-              {movie.genres?.map((genre) => (
-                <span key={genre.id} className="genre-chip">
-                  {genre.name}
-                </span>
-              ))}
-            </div>
-          </div>
+          <MovieHero movie={movie} />
+          <MovieDetails
+            title={movie.title}
+            rating={movie.vote_average}
+            runtime={movie.runtime}
+            releaseDate={movie.release_date}
+            genres={movie.genres}
+          />
         </div>
       </section>
       <div className="content">

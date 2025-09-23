@@ -79,7 +79,8 @@ function SeriesInfo() {
                 serie?.number_of_seasons === 1 ? "Season" : "Seasons"
               }`}
             </p>
-            <p> {serie.release_date?.slice(0, 4)}</p>
+            <p>{serie.number_of_episodes} Episodes</p>
+            {/* <p> {serie.release_date?.slice(0, 4)}</p> */}
             <div className="movie-genres">
               {serie.genres?.map((genre) => (
                 <span key={genre.id} className="genre-chip">

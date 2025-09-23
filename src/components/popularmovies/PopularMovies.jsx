@@ -5,7 +5,7 @@ import "./PopularMovies.css";
 function PopularMovies({ movies }) {
   return (
     <div className="category-popular">
-      <h2>Popular Films</h2>
+      <h2 className="popular-header">Popular Films</h2>
 
       <div className="movies-grid-popular">
         {movies.results.map((movie) => (

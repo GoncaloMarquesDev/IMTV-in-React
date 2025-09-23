@@ -1,0 +1,57 @@
+.movie-hero {
+  margin-top: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  padding: 60px;
+}
+ @media (min-width: 411px) and (max-width: 768px) {
+  .movie-hero {
+   margin-top: 45px;
+  }}
+  .movie-hero-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+.movie-poster {
+ /*  width: 350px; */
+  top: 50px;
+  left: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.movie-poster img {
+  width: 300px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+
+
+
+@media (max-width: 400px) {
+  .movie-hero-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+  }
+  .movie-poster {
+    width: 200px;
+
+    top: 50px;
+    left: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+}
