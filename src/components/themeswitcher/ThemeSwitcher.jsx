@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../themecontext/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 import "./ThemeSwitcher.css";

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { FavoritesContext } from "../favoritecontext/FavoriteContext";
-import CardMoviesSeries from "../cardmoviesseries/CardMoviesSeries";
+import { FavoritesContext } from "../../context/FavoriteContext";
+import CardMoviesSeries from "../../components/cardmoviesseries/CardMoviesSeries";
 import { Link } from "react-router";
 import "./FavoritesPage.css";
 

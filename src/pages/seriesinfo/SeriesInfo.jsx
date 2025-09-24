@@ -1,23 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
-import CastCard from "../castcard/CastCard";
-import CrewCard from "../crewcard/CrewCard";
-import MoreLikeThis from "../morelikethis/MorelikeThis";
-import Loading from "../loading/Loading";
-/* import SeriesList from "./seriesList"; */
+import CastCard from "../../components/castcard/CastCard";
+import CrewCard from "../../components/crewcard/CrewCard";
+import MoreLikeThis from "../../components/morelikethis/MorelikeThis";
+import Loading from "../../components/loading/Loading";
 import "./SeriesInfo.css";
+import MediaHero from "../../components/mediahero/MediaHero"; 
+import MediaDetail from "../../components/mediadetail/MediaDetail";
 
 function SeriesInfo() {
   const { id } = useParams();
   const [serie, setSerie] = useState(null);
-  console.log("movie genres", serie);
 
   const [selectedSeriesId, setSelectedSeriesId] = useState(id);
 
   const genres = serie?.genres;
   const genresById = genres?.map((genre) => genre.id);
   const genresByIdString = genresById?.join(",");
-  console.log("genresByIdString", genresByIdString);
 
   const serieInfoRef = useRef(null);
 
@@ -33,8 +32,7 @@ function SeriesInfo() {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNzJjMmNlNjZlNDFjMjkyOTg5OWJiMjU2ZjFjNGRiNSIsIm5iZiI6MTc1NDA4NjQ1MC43OTcsInN1YiI6IjY4OGQzYzMyZTllOTc2YjI1Y2RlNjIwOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A2s0Jbc8bApWe7beNwRy8GcGQ1tk6bgNCbq1m4pH-Dg",
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNzJjMmNlNjZlNDFjMjkyOTg5OWJiMjU2ZjFjNGRiNSIsIm5iZiI6MTc1NDA4NjQ1MC43OTcsInN1YiI6IjY4OGQzYzMyZTllOTc2YjI1Y2RlNjIwOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.A2s0Jbc8bApWe7beNwRy8GcGQ1tk6bgNCbq1m4pH-Dg",
         },
       };
 
@@ -43,14 +41,14 @@ function SeriesInfo() {
         options
       );
       const data = await response.json();
-      console.log("data procura das series", data);
       setSerie(data);
     };
 
     if (id) fetchTvShow();
   }, [id]);
+
   if (!serie) return <Loading />;
-  if (serie.success === false) return <p>Serie não encontrado.</p>;
+  if (serie.success === false) return <p>Serie não encontrada.</p>;
 
   return (
     <div>
@@ -63,40 +61,18 @@ function SeriesInfo() {
         }}
       >
         <div className="serie-hero-content">
-          <div className="serie-poster" ref={serieInfoRef}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`}
-              alt={serie.name}
-            />
-          </div>
-
-          <div className="serie-details">
-            <h1>{serie.name}</h1>
-            <p className="rating">★ {serie.vote_average.toFixed(1)}/10</p>
-            <p> {serie.first_air_date?.slice(0, 4)}</p>
-            <p>
-              {`${serie?.number_of_seasons ?? 0} ${
-                serie?.number_of_seasons === 1 ? "Season" : "Seasons"
-              }`}
-            </p>
-            <p>{serie.number_of_episodes} Episodes</p>
-            {/* <p> {serie.release_date?.slice(0, 4)}</p> */}
-            <div className="movie-genres">
-              {serie.genres?.map((genre) => (
-                <span key={genre.id} className="genre-chip">
-                  {genre.name}
-                </span>
-              ))}
-            </div>
-          </div>
+          <MediaHero media={serie} mediaInfoRef={serieInfoRef} /> 
+          <MediaDetail media={serie} />
         </div>
       </section>
+
       <div className="serie-content">
         <div className="serie-overview">
           <h1>Overview</h1>
           <p>{serie.overview}</p>
         </div>
       </div>
+
       <div className="serie-cast">
         <CastCard id={id} type={"tv"} />
         <CrewCard id={id} type={"tv"} />
@@ -104,7 +80,7 @@ function SeriesInfo() {
           type={"tv"}
           genres={genresByIdString}
           movieId={selectedSeriesId}
-          onSelectMovie={(id) => setSelectedSeriesId(id)} // função que atualiza o id
+          onSelectMovie={(id) => setSelectedSeriesId(id)}
           onMovieClick={scrollToInfo}
         />
       </div>

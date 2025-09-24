@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import SearchBar from "../searchbar/SearchBar";
 import { useContext, useState } from "react";
-import { ThemeContext } from "../themecontext/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 import ThemeSwitcher from "../themeswitcher/ThemeSwitcher";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import "./NavBar.css";

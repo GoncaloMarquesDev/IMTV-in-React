@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FavoritesContext } from "../favoritecontext/FavoriteContext";
+import { FavoritesContext } from "../../context/FavoriteContext";
 import StarRating from "../starrating/StarRating";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import "./CardMoviesSeries.css";
