@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
-import CastCard from "../castcard/CastCard";
-import CrewCard from "../crewcard/CrewCard";
-import MoreLikeThis from "../morelikethis/MorelikeThis";
-import Loading from "../loading/Loading";
+import CastCard from "../../components/castcard/CastCard";
+import CrewCard from "../../components/crewcard/CrewCard";
+import MoreLikeThis from "../../components/morelikethis/MorelikeThis";
+import Loading from "../../components/loading/Loading";
 import "./MovieInfo.css";
-import MovieDetails from "../moviedetail/MovieDetail";
-import MovieHero from "../moviehero/MovieHero";
+import MovieDetails from "../../components/mediadetail/MediaDetail";
+import MediaHero from "../../components/mediahero/MediaHero";
+import MediaDetail from "../../components/mediadetail/MediaDetail";
 
 function MovieInfo() {
   const { id } = useParams();
@@ -65,14 +66,8 @@ function MovieInfo() {
         }}
       >
         <div className="movie-hero-content">
-          <MovieHero movie={movie} />
-          <MovieDetails
-            title={movie.title}
-            rating={movie.vote_average}
-            runtime={movie.runtime}
-            releaseDate={movie.release_date}
-            genres={movie.genres}
-          />
+          <MediaHero media={movie} mediaInfoRef={movieInfoRef} />
+          <MediaDetail media={movie} />
         </div>
       </section>
       <div className="content">

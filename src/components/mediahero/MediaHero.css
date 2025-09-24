@@ -1,0 +1,86 @@
+.media-hero {
+  margin-top: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: white;
+  padding: 60px;
+  min-height: 60vh; /* garante que a imagem aparece mesmo em telas médias/pequenas */
+}
+
+.media-hero-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.media-poster {
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.media-poster img {
+  width: 300px;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Breakpoints médios */
+@media (max-width: 765px) {
+  .media-hero {
+     padding: 40px 20px;
+    margin-top: 45px;
+    min-height: 50vh;
+  }
+
+  .media-hero-content {
+    gap: 30px;
+  }
+
+  .media-poster img {
+    width: 250px;
+  }
+}
+
+/* Breakpoints pequenos */
+@media (max-width: 480px) {
+  .media-hero {
+     padding: 30px 15px;
+    margin-top: 30px;
+    min-height: 45vh;
+  }
+
+  .media-hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .media-poster img {
+    min-width: 180px;
+  }
+}
+
+/* Ultra pequenos */
+@media (max-width: 380px) {
+  .media-hero {
+     padding: 20px 10px;
+    min-height: 40vh;
+  }
+
+  .media-hero-content {
+    gap: 15px;
+  }
+
+  .media-poster img {
+    width: 150px;
+  }
+}

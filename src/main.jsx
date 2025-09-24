@@ -6,14 +6,14 @@ import "./styles/reset.css";
 
 import NotFound from "./components/NotFound.jsx";
 import NavBar from "./components/navbar/NavBar.jsx";
-import MoviesList from "./components/movieslist/MoviesList.jsx";
-import MovieInfo from "./components/movieinfo/MovieInfo.jsx";
+import MoviesList from "./pages/movieslist/MoviesList.jsx";
+import MovieInfo from "./pages/movieinfo/MovieInfo.jsx";
 import { AiringTodayProvider } from "./context/AirinTodayContext.jsx";
-import SeriesList from "./components/serieslist/SeriesList.jsx";
-import SeriesInfo from "./components/seriesinfo/SeriesInfo.jsx";
-import { ThemeProvider } from "./components/themecontext/ThemeContext.jsx";
-import { FavoritesProvider } from "./components/favoritecontext/FavoriteContext.jsx";
-import FavoritesPage from "./components/favoritespage/FavoritesPage.jsx";
+import SeriesList from "./pages/serieslist/SeriesList.jsx";
+import SeriesInfo from "./pages/seriesinfo/SeriesInfo.jsx";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
+import { FavoritesProvider } from "./context/FavoriteContext.jsx";
+import FavoritesPage from "./pages/favoritespage/FavoritesPage.jsx";
 import { Navigate } from "react-router";
 
 createRoot(document.getElementById("root")).render(

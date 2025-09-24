@@ -1,0 +1,68 @@
+.movie-hero {
+  margin-top: 20px;
+  background-size: cover;      /* cobre o container */
+  background-position: center; /* centraliza a imagem */
+  background-repeat: no-repeat; /* não repete */
+  width: 100vw;                /* garante largura total */
+               /* altura full screen */
+  position: relative;
+  color: white;
+  padding: 60px;
+}
+.movie-hero-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*   gap: 40px; */
+  /* padding: 60px; */
+}
+.content {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+.overview {
+ 
+  text-align: justify;
+  margin-top: 50px;
+  margin-left: 40px;
+  margin-right: 60px;
+  font-size: larger;
+}
+/* @media(max-width:607px){
+  .overview{
+       margin-right: 20px;
+  }
+
+} */
+.cast {
+  margin-left: 45px;
+}
+@media (max-width: 400px) {
+ 
+  .overview {
+    text-align: justify;
+    max-width: 60%;
+    margin-top: 50px;
+    /* margin-left: 40px; */
+   /*  margin-right: 20px; */
+    font-size: larger;
+  }
+}
+
+@media(max-width:765px){
+  .movie-hero-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+ 
+  /*   gap: 40px; */
+  /* padding: 60px; */
+}
+}

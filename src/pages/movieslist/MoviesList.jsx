@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import CardMoviesSeries from "../cardmoviesseries/CardMoviesSeries";
-import PopularMovies from "../popularmovies/PopularMovies";
-import NowPlaying from "../nowplaying/NowPlaying";
-import SeriesAiring from "../seriesairing/SeriesAiring";
-import TopRatedMovies from "../topratedmovies/TopRatedMovies";
-import Pagination from"../pagination/Pagination"
-import Loading from "../loading/Loading";
+import CardMoviesSeries from "../../components/cardmoviesseries/CardMoviesSeries";
+import PopularMovies from "../../components/popularmovies/PopularMovies";
+import NowPlaying from "../../components/nowplaying/NowPlaying";
+import SeriesAiring from "../../components/seriesairing/SeriesAiring";
+import TopRatedMovies from "../../components/topratedmovies/TopRatedMovies";
+import Pagination from"../../components/pagination/Pagination"
+import Loading from "../../components/loading/Loading";
 import "./MoviesList.css";
 
 function MoviesList() {

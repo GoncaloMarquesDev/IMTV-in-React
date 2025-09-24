@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-import PopularSeries from "../popularseries/PopularSeries";
-import TopRatedSeries from "../topratedseries/TopRatedSeries";
-import SeriesAiring from "../seriesairing/SeriesAiring";
-import Pagination from "../pagination/Pagination";
-import Loading from "../loading/Loading";
+import PopularSeries from "../../components/popularseries/PopularSeries";
+import TopRatedSeries from "../../components/topratedseries/TopRatedSeries";
+import SeriesAiring from "../../components/seriesairing/SeriesAiring";
+import Pagination from "../../components/pagination/Pagination";
+import Loading from "../../components/loading/Loading";
 import "./SeriesList.css";
 
 function SeriesList() {
