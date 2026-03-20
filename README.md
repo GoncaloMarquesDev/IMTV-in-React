@@ -1,12 +1,38 @@
-# React + Vite
+# IMTV in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern platform for browsing movies and trends, designed to provide a fluid and intuitive experience for cinema enthusiasts.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [imtv-in-react.vercel.app](https://imtv-in-react.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 🎓 About this Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project was developed as part of the **Frontend Engineering Course**, specifically during the **React Module**. It serves as a practical application of the concepts learned, focusing on state management, API integration, and building a scalable user interface.
+
+
+## 🚀 Technologies Used
+
+This project was built using the following stack:
+
+*   **React**: Core library for building the component-based user interface.
+*   **CSS**: Traditional styling for a clean and responsive layout.
+*   **React Context API**: Used for **Global State Management**, allowing movie data and favorites to be shared efficiently across all components.
+*   **Movie API**: Integration with an external database for real-time movie metadata consumption.
+
+## ✨ Main Features
+
+*   **Trending Exploration**: An updated list of the most popular movies and content of the week.
+*   **Favorites System**: Ability to bookmark movies as favorites through a simple, centralized interface.
+*   **Data Persistence**: Uses **LocalStorage** to keep your favorites list saved even after closing or refreshing the browser.
+*   **Movie Details**: Detailed information for each title, including synopses, ratings, and posters.
+*   **Responsive Design**: Fully adapted interface for mobile, tablet, and desktop devices.
+
+## 🛠️ Installation and Setup
+
+Follow the steps below to run the project locally:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+
+   
